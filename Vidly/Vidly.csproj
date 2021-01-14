@@ -179,11 +179,20 @@
     <Compile Include="Migrations\202101141344240_AddMovies.designer.cs">
       <DependentUpon>202101141344240_AddMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101141348380_AddIsSubscribedToNewsl.cs" />
+    <Compile Include="Migrations\202101141348380_AddIsSubscribedToNewsl.designer.cs">
+      <DependentUpon>202101141348380_AddIsSubscribedToNewsl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101141352191_AddMemebershipType.cs" />
+    <Compile Include="Migrations\202101141352191_AddMemebershipType.designer.cs">
+      <DependentUpon>202101141352191_AddMemebershipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -267,6 +276,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101141344240_AddMovies.resx">
       <DependentUpon>202101141344240_AddMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141348380_AddIsSubscribedToNewsl.resx">
+      <DependentUpon>202101141348380_AddIsSubscribedToNewsl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141352191_AddMemebershipType.resx">
+      <DependentUpon>202101141352191_AddMemebershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
