@@ -30,8 +30,6 @@
             Sql("INSERT INTO Movies (Name, Genre_Id, DateAdded, DateRelease) VALUES ('Shrek',    1, '2007-01-01',  '2000-10-10')");
             Sql("INSERT INTO Movies (Name, Genre_Id, DateAdded, DateRelease) VALUES ('Champion', 2, '2020-01-01',  '2019-11-11')");
             Sql("INSERT INTO Movies (Name, Genre_Id, DateAdded, DateRelease) VALUES ('Winner',   2, GETDATE(), '1999-07-08')");
-            //Sql("INSERT INTO Movies (Name, Genre, DateAdded, DateRelease, Stock) VALUES ('Selector', " +
-            //    "(SELECT Id FROM TABLE Genres WHERE Name = 'Thriller') , '2021-05-05',  '2010-01-01', 5)");
 
 
         }

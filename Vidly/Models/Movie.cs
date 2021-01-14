@@ -10,6 +10,6 @@ namespace Vidly.Models
         public Genres Genre { get; set; }
         public DateTime DateAdded { get; set; }
         public DateTime DateRelease { get; set; }
-        public uint stock { get; set; }
+        public int Stock { get; set; }
     }
 }

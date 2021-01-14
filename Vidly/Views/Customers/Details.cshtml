@@ -1,13 +1,31 @@
 ﻿@model Vidly.Models.Customer
 
 @{
-    ViewBag.Title = Model.Name;
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
-<li>@Model.MembershipType.Name</li>
-@if (Model.Birthdate!=null)
+
+@if (Model == null)
 {
-    <li>Birthdate: @Model.Birthdate.GetValueOrDefault().ToString("yyyy-MM-dd")</li>
+    <h2>Invalid Customer reference!</h2>
 }
+else
+{
+    <h2>@Model.Name</h2>
+
+    <hr />
+
+    <li>@Model.MembershipType.Name</li>
+    if (Model.Birthdate != null)
+    {
+        <li>Birthdate: @Model.Birthdate.GetValueOrDefault().ToString("yyyy-MM-dd")</li>
+    }
+
+}
+
+<hr />
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -207,6 +207,10 @@
     <Compile Include="Migrations\202101141842405_AddedGenres.designer.cs">
       <DependentUpon>202101141842405_AddedGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101141924074_FixMovieGenre.cs" />
+    <Compile Include="Migrations\202101141924074_FixMovieGenre.designer.cs">
+      <DependentUpon>202101141924074_FixMovieGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -281,6 +285,7 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <None Include="Views\Customers\Details.cshtml" />
     <None Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
     <None Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
@@ -318,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101141842405_AddedGenres.resx">
       <DependentUpon>202101141842405_AddedGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101141924074_FixMovieGenre.resx">
+      <DependentUpon>202101141924074_FixMovieGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
