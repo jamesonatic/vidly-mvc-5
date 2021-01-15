@@ -46,5 +46,10 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
+        [HttpPost]
+        public ActionResult Create(Customer customer) 
+        {
+            return View();
+        }
     }
 }

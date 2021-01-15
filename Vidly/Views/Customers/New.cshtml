@@ -28,7 +28,12 @@
         @Html.DropDownListFor(m => m.Customer.MembershipTypeId, 
             new SelectList(Model.MembershipTypes,"Id", "Name", "Select memebership type"),
             new { @class = "form-control"})
+        @*ToDo what is heck is this selectlist(...)???*@
     </div> 
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+
 
 
 }
