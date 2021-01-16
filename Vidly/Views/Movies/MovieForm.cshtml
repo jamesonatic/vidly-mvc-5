@@ -1,4 +1,4 @@
-﻿@model Vidly.Models.Movie
+﻿@model Vidly.ViewModels.MovieFormViewModel
 
 @{
     ViewBag.Title = "MovieForm";
@@ -10,29 +10,34 @@
 @using (Html.BeginForm("Save", "Movies"))
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.Name)
-        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Movie.Name)
+        @Html.TextBoxFor(m => m.Movie.Name, new { @class = "form-control" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.DateAdded)
-        @Html.TextBoxFor(m => m.DateAdded, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+        @Html.LabelFor(m => m.Movie.DateAdded)
+        @Html.TextBoxFor(m => m.Movie.DateAdded, "{0:yyyy-MM-dd}", new { @class = "form-control" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.DateRelease)
-        @Html.TextBoxFor(m => m.DateRelease, "{0:yyyy-MM-dd}", new{@class="form-control"})
+        @Html.LabelFor(m => m.Movie.DateRelease)
+        @Html.TextBoxFor(m => m.Movie.DateRelease, "{0:yyyy-MM-dd}", new{@class="form-control"})
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Genre.Name)
-        @Html.TextBoxFor(m=>m.Genre.Name, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Movie.Genre.Name)
+        @Html.DropDownListFor(m=>m.Movie.Genre.Id, 
+            new SelectList(Model.Genres,"Id","Name","Select a genre"),
+            new {@class="form-control"})
     </div>
+
+
 
     <div class="form-group">
-        @Html.LabelFor(m=>m.Stock)
-        @Html.TextBoxFor(m=>m.Stock, new { @class = "form-control"})
+        @Html.LabelFor(m=>m.Movie.Stock)
+        @Html.TextBoxFor(m=>m.Movie.Stock, new { @class = "form-control"})
     </div>
 
+    @Html.HiddenFor(m=>m.Movie.Id)
     <button type="submit" class="btn-primary">Save</button>
 }

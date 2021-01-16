@@ -57,7 +57,13 @@ namespace Vidly.Controllers
 
         public ActionResult New()
         {
-            return View("MovieForm");
+            var genres = _context.Genres;
+            var movieForm = new MovieFormViewModel()
+            {
+                Genres = genres
+            };
+
+            return View("MovieForm",movieForm);
         }
 
         public ActionResult jhgjhgjhgj()
@@ -67,8 +73,26 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
-        public ActionResult Save()
+        [HttpPost]
+        public ActionResult Save(MovieFormViewModel viewModel)
         {
+            var movieForm = viewModel.Movie;
+
+            if (movieForm.Id == 0)
+                _context.Movies.Add(movieForm);
+            else
+            {
+                var movieDb = _context.Movies.SingleOrDefault(m => m.Id == movieForm.Id);
+
+                movieDb.Name = movieForm.Name;
+                movieDb.DateRelease = movieForm.DateRelease;
+                movieDb.DateAdded = movieForm.DateAdded;
+                movieDb.GenreId = movieForm.Genre.Id;
+                movieDb.Stock = movieForm.Stock;
+            }
+
+            _context.SaveChanges();
+
             var movies = _context.Movies.Include(m => m.Genre);
 
             return View("Index",movies);
@@ -76,9 +100,15 @@ namespace Vidly.Controllers
 
         public ActionResult Edit(int id)
         {
-            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m=>m.Id==id);
-            
-            return View("MovieForm",movie);
+            var movieDb = _context.Movies.Include(m => m.Genre).SingleOrDefault(m=>m.Id==id);
+            var genresDb = _context.Genres;
+            var movieForm = new MovieFormViewModel
+            {
+                Movie = movieDb,
+                Genres = genresDb
+            };
+
+            return View("MovieForm",movieForm);
         }
     }
 }
