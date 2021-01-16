@@ -1,0 +1,14 @@
+﻿@model Vidly.Models.Movie
+
+@{
+    ViewBag.Title = "MovieForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New</h2>
+
+@using (Html.BeginForm("Save", "Movies"))
+{
+
+    <button type="submit" class="btn-primary">Save</button>
+}
