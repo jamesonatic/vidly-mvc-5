@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 using System.Data.Entity;
+using System.Linq;
 
 namespace Vidly.Controllers
 {
@@ -56,9 +57,14 @@ namespace Vidly.Controllers
 
         public ActionResult New()
         {
+            return View("MovieForm");
+        }
+
+        public ActionResult jhgjhgjhgj()
+        {
             var movie = new Movie();
 
-            return View("MovieForm",movie);
+            return View(movie);
         }
 
         public ActionResult Save()
@@ -66,6 +72,13 @@ namespace Vidly.Controllers
             var movies = _context.Movies.Include(m => m.Genre);
 
             return View("Index",movies);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m=>m.Id==id);
+            
+            return View("MovieForm",movie);
         }
     }
 }

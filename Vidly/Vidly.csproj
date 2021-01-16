@@ -291,6 +291,7 @@
     <Content Include="Views\Movies\Edit.cshtml" />
     <None Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="Views\Movies\jhgjhgjhgj.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
