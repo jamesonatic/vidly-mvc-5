@@ -47,9 +47,9 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(Customer customerForm)
+        public ActionResult Save(CustomerFormViewModel viewmodel)
         {
-//            var customerForm = viewmodel.Customer;
+            var customerForm = viewmodel.Customer;
 
             if (customerForm.Id == 0)
                 _context.Customers.Add(customerForm);
