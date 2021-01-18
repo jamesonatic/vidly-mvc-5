@@ -17,6 +17,10 @@
 
 <h2>Customers</h2>
 
+<p>
+    @Html.ActionLink("New customer", "New", "Customers", null, new { @class = "btn btn-primary" })
+</p>
+
 <table id="customers" class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -40,7 +44,7 @@
                 columns: [
                     {
                         data: "name",
-                        render: function(data, type, customer) {
+                        render: function (data, type, customer) {
                             return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
                         }
                     },
@@ -49,7 +53,7 @@
                     },
                     {
                         data: "id",
-                        render: function(data) {
+                        render: function (data) {
                             return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
                         }
                     }
