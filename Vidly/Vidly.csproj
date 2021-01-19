@@ -16,10 +16,12 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -228,6 +230,10 @@
     <Compile Include="Migrations\201604050707219_Genres.cs" />
     <Compile Include="Migrations\201604050707219_Genres.Designer.cs">
       <DependentUpon>201604050707219_Genres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101191640066_SeedUsers.cs" />
+    <Compile Include="Migrations\202101191640066_SeedUsers.Designer.cs">
+      <DependentUpon>202101191640066_SeedUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -525,6 +531,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604050707219_Genres.resx">
       <DependentUpon>201604050707219_Genres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101191640066_SeedUsers.resx">
+      <DependentUpon>202101191640066_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
