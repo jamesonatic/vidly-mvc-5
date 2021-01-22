@@ -11,16 +11,27 @@ namespace Vidly.Controllers.Api
 {
     public class RentalController : ApiController
     {
+        public ApplicationDbContext _context { get; set; }
+
+        public RentalController()
+        {
+            _context = new ApplicationDbContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET api/<controller>
         public RentalDto GetRental()
         {
-            var movies = new List<Movie>();
-            movies.Add(new Movie { Id = 5, Name = "testmovie", GenreId = 2 });
-            movies.Add(new Movie { Id = 6, Name = "testmovie", GenreId = 3 });
+            var movies = new List<int>();
+            movies.Add(1);
+            movies.Add(2);
             var rental = new RentalDto
             {
                 CustomerId = 5,
-                Movies = movies
+                MovieIds = movies
             };
 
             return rental;
@@ -33,6 +44,19 @@ namespace Vidly.Controllers.Api
             if (!ModelState.IsValid)
                 return BadRequest();
 
+            foreach (var rentalMovieId in rental.MovieIds)
+            {
+                var rentalDb = new Rental
+                {
+                    Customer = _context.Customers.SingleOrDefault(c => c.Id == rental.CustomerId),
+                    Movie = _context.Movies.SingleOrDefault(m => m.Id == rentalMovieId),
+                    DateRented = DateTime.Today
+                };
+                _context.Rental.Add(rentalDb);
+            }
+
+
+            _context.SaveChanges();
 
             return Ok();
         }

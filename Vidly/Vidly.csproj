@@ -249,6 +249,14 @@
     <Compile Include="Migrations\202101222155296_UpdateRental.Designer.cs">
       <DependentUpon>202101222155296_UpdateRental.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101222255282_UpdateRental1.cs" />
+    <Compile Include="Migrations\202101222255282_UpdateRental1.Designer.cs">
+      <DependentUpon>202101222255282_UpdateRental1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101222326344_UpdateMovie.cs" />
+    <Compile Include="Migrations\202101222326344_UpdateMovie.Designer.cs">
+      <DependentUpon>202101222326344_UpdateMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -563,6 +571,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101222155296_UpdateRental.resx">
       <DependentUpon>202101222155296_UpdateRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101222255282_UpdateRental1.resx">
+      <DependentUpon>202101222255282_UpdateRental1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101222326344_UpdateMovie.resx">
+      <DependentUpon>202101222326344_UpdateMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

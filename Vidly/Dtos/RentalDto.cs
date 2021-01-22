@@ -13,6 +13,6 @@ namespace Vidly.Dtos
         public int CustomerId { get; set; }
 
         [Required]
-        public List<Movie> Movies { get; set; }
+        public List<int> MovieIds { get; set; }
     }
 }
