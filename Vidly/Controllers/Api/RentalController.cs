@@ -44,15 +44,21 @@ namespace Vidly.Controllers.Api
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            foreach (var rentalMovieId in rental.MovieIds)
+            var customer = _context.Customers.Single(
+                c => c.Id == rental.CustomerId);
+
+            var movies = _context.Movies.Where(
+                m => rental.MovieIds.Contains(m.Id));
+
+            foreach (var movie in movies)
             {
-                var rentalDb = new Rental
+                var newRental = new Rental
                 {
-                    Customer = _context.Customers.SingleOrDefault(c => c.Id == rental.CustomerId),
-                    Movie = _context.Movies.SingleOrDefault(m => m.Id == rentalMovieId),
+                    Customer = customer,
+                    Movie = movie,
                     DateRented = DateTime.Today
                 };
-                _context.Rental.Add(rentalDb);
+                _context.Rental.Add(newRental);
             }
 
 
