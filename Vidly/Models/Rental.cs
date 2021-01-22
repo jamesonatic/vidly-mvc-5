@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Security.AccessControl;
+using System.Web;
+using Vidly.Controllers;
+
+namespace Vidly.Models
+{
+    public class Rental
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public Customer Customer { get; set; }
+        
+        [Required]
+        public Movie Movies { get; set; }
+        
+        public DateTime? Timestamp { get; set; }
+    }
+}
