@@ -14,8 +14,8 @@
 
     @* 'div.form-group>label+input[type='text'].form-control' *@
     <div class="form-group">
-        <label></label>
-        <input type="text" value="" class="form-control" />
+        <label>Movie</label>
+        <input id="movie" type="text" value="" class="form-control" />
     </div>
 
     @* button.btn.btn-primary *@
@@ -51,6 +51,29 @@
                 function(e, customer) {
                     vm.customerId = customer.id;
                 });
+
+
+            var movies = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/movies?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#movie').typeahead({
+                minLength: 3,
+                highlight: true
+            },
+                {
+                    name: 'movies',
+                    display: 'name',
+                    source: movies
+                }).on("typeahead:select",
+                    function (e, movie) {
+                        vm.customerId = movie.id;
+                    });
         });
     </script>
 }
