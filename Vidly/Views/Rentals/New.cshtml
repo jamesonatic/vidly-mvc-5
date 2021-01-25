@@ -12,11 +12,14 @@
         <input id="customer" type="text" value="" class="form-control" />
     </div>
 
-    @* 'div.form-group>label+input[type='text'].form-control' *@
+    @* div.form-group>label+input[type='text'].form-control *@
     <div class="form-group">
         <label>Movie</label>
         <input id="movie" type="text" value="" class="form-control" />
     </div>
+
+    @* ul#movies.list-group *@
+    <ul id="movies" class="list-group"></ul>
 
     @* button.btn.btn-primary *@
     <button class="btn btn-primary">Save</button>
@@ -27,7 +30,9 @@
 {
     <script>
 
-        var vm = {};
+        var vm = {
+            movieIds: []
+        };
 
         $(document).ready(function() {
             var customers = new Bloodhound({
@@ -72,7 +77,11 @@
                     source: movies
                 }).on("typeahead:select",
                     function (e, movie) {
-                        vm.customerId = movie.id;
+                        $("#movies").append("<li>" + movie.name + "</li>");
+
+                        $("#movie").typeahead("val", "");
+
+                        vm.movieIds.push(movie.id);
                     });
         });
     </script>
