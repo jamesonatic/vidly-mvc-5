@@ -405,6 +405,7 @@
     <Content Include="package-lock.json" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="AppSettings.config" />
     <None Include="Properties\PublishProfiles\publish_testing.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />

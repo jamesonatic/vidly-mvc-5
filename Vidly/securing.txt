@@ -1,0 +1,3 @@
+aspnet_regiis -pef "appSettings" "D:\z_publish" -prov "DataProtectionConfigurationProvider"
+
+aspnet_regiis -pdf "appSettings" "D:\z_publish"
